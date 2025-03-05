@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import StringCalculator from "./StringCalculator";
+import { add } from "./utils/calculator";
 
 test("renders input and button", () => {
     render(<StringCalculator />);
