@@ -7,7 +7,7 @@ const StringCalculator = () => {
 	return (
 		<div>
 			<h2>String Calculator</h2>
-			<input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
+			<input type="text" placeholder="Enter numbers..." value={input} onChange={(e) => setInput(e.target.value)} />
 			<button>Calculate</button>
 			{result !== null && <p>Result: {result}</p>}
 		</div>
