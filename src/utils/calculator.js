@@ -9,5 +9,5 @@ export function add(numbers) {
         throw new Error(`Negative numbers not allowed: ${negatives.join(", ")}`);
     }
 
-    return numbers.split(",").map(Number).reduce((sum, num) => sum + num, 0);
+    return numbers.split(/,|\n/).map(Number).reduce((sum, num) => sum + num, 0);
 }
