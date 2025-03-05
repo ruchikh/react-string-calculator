@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { add } from "./utils/calculator";
+import styles from "./styles.js";
 
 const StringCalculator = () => {
 	const [input, setInput] = useState("");
@@ -19,12 +20,26 @@ const StringCalculator = () => {
 	};
 
 	return (
-		<div>
-			<h2>String Calculator</h2>
-			<input type="text" placeholder="Enter numbers..." value={input} onChange={(e) => setInput(e.target.value)} />
-			<button onClick={handleCalculate}>Calculate</button>
-			{result !== null && <p>Result: {result}</p>}
-			{error && <p style={{ color: 'red' }}>Error: {error}</p>}
+		<div style={styles.container}>
+			<div
+				style={styles.calculatorBox}
+			>
+				<h2>String Calculator</h2>
+				<input
+					type="text"
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
+					placeholder="Enter numbers..."
+					style={styles.inputBox}
+				/>
+				<button onClick={handleCalculate}
+					style={styles.calculateButton}
+				>
+					Calculate
+				</button>
+				{result !== null && <p style={styles.result}>Result: {result}</p>}
+				{error && <p style={styles.error}>Error: {error}</p>}
+			</div>
 		</div>
 	);
 };
