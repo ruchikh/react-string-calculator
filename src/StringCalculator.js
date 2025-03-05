@@ -8,8 +8,10 @@ const StringCalculator = () => {
 	const [error, setError] = useState("");
 
 	const handleCalculate = () => {
+		const inputValue = input.replace(/\s/g, '').replace(/\\n/g, '\n');
+
 		try {
-			const sum = add(input);
+			const sum = add(inputValue);
 			setResult(sum);
 			setError(null);
 		} catch (err) {

@@ -2,7 +2,8 @@
 export function add(numbers) {
 	if (!numbers) return 0;
 
-	let delimiter = /,|\n/;
+	let delimiter = /[,|\n.]/;
+
 	if (numbers.startsWith("//")) {
 		const delimiterEnd = numbers.indexOf("\n");
 		let customDelimiter = numbers.substring(2, delimiterEnd);
