@@ -7,3 +7,7 @@ test("renders input and button", () => {
     expect(screen.getByPlaceholderText("Enter numbers...")).toBeInTheDocument();
     expect(screen.getByText("Calculate")).toBeInTheDocument();
 });
+
+test("returns sum of numbers", () => {
+    expect(add("1,2,3")).toBe(6);
+});
